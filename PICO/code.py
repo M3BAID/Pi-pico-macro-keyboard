@@ -6,8 +6,10 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 
-keyboard = Keyboard(usb_hid.devices)
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
 
+keyboard = Keyboard(usb_hid.devices)
 btn1_pin = board.GP0
 btn1 = digitalio.DigitalInOut(btn1_pin)
 btn1.direction = digitalio.Direction.INPUT
@@ -67,57 +69,81 @@ btn12_pin = board.GP12
 btn12 = digitalio.DigitalInOut(btn12_pin)
 btn12.direction = digitalio.Direction.INPUT
 btn12.pull = digitalio.Pull.DOWN
-while True:
 
-    
-    
-    
+led.value = True
+time.sleep(0.5)
+led.value = False
+time.sleep(0.1)
+while True:
     if btn1.value:
-        keyboard.send(Keycode.F13)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F1)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn2.value:
-        keyboard.send(Keycode.F14)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F9)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn3.value:
-        keyboard.send(Keycode.F15)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F6)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn4.value:
-        keyboard.send(Keycode.F16)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F7)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn5.value:
-        keyboard.send(Keycode.F17)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F10)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn6.value:
-        keyboard.send(Keycode.F18)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F8)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn7.value:
-        keyboard.send(Keycode.F19)
-        time.sleep(0.1)
+        keyboard.send(KKeycode.SHIFT, Keycode.F12)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn8.value:
-        keyboard.send(Keycode.F20)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F11)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn9.value:
-        keyboard.send(Keycode.F21)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F3)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn10.value:
-        keyboard.send(Keycode.F22)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F2)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn11.value:
-        keyboard.send(Keycode.F23)
-        time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F4)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
 
     if btn12.value:
-        keyboard.send(Keycode.F24)
-        time.sleep(0.1)
-     
-    time.sleep(0.1)
+        keyboard.send(Keycode.SHIFT, Keycode.F5)
+        led.value = True
+        time.sleep(0.08)
+        led.value = False
+    time.sleep(0.05)
