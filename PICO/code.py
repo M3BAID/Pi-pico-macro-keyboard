@@ -82,7 +82,7 @@ while True:
         led.value = False
 
     if btn2.value:
-        keyboard.send(Keycode.SHIFT, Keycode.F9)
+        keyboard.send(Keycode.SHIFT, Keycode.F11)
         led.value = True
         time.sleep(0.08)
         led.value = False
@@ -118,7 +118,7 @@ while True:
         led.value = False
 
     if btn8.value:
-        keyboard.send(Keycode.SHIFT, Keycode.F11)
+        keyboard.send(Keycode.SHIFT, Keycode.F9)
         led.value = True
         time.sleep(0.08)
         led.value = False
