@@ -112,7 +112,7 @@ while True:
         led.value = False
 
     if btn7.value:
-        keyboard.send(KKeycode.SHIFT, Keycode.F12)
+        keyboard.send(Keycode.SHIFT, Keycode.F12)
         led.value = True
         time.sleep(0.08)
         led.value = False
